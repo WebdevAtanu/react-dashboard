@@ -17,15 +17,15 @@ function Dashboard() {
 	const save=ref1.current.value-ref2.current.value
 		setData([
 			{
-			'label':'earn',
+			'label':'Earnings',
      		'value':ref1.current.value
     		},
     		{
-      		'label':'expense',
+      		'label':'Expenses',
       		'value':ref2.current.value
     		},
     		{
-      		'label':'save',
+      		'label':'Savings',
       		'value':save
     		}
 			])
@@ -52,19 +52,17 @@ function Dashboard() {
 		<table>
 			<tbody>
 				<tr>
-					<td>Total Income</td>
-					<td><input type="number" ref={ref1}/></td>
+					<td><input type="number" ref={ref1} placeholder='Total Income'/></td>
 				</tr>
 				<tr>
-					<td>Total Expense</td>
-					<td><input type="number" ref={ref2}/></td>
+					<td><input type="number" ref={ref2} placeholder='Total Expenses'/></td>
 				</tr>
 				<tr>
-					<td colSpan='2'><button onClick={setter}>GENERATE</button></td>
+					<td><button onClick={setter}>GENERATE</button></td>
 				</tr>
 			</tbody>
 		</table>
-			<p>Visual representaion</p>
+			<p>Data Representaion</p>
 			<div className="div">
          <Bar data={
               {

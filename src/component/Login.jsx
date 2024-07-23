@@ -9,10 +9,6 @@ function Login({log,children}) {
 	const {value}=useContext(conText);
 	const navigate=useNavigate();
 
-	useEffect(()=>{
-		
-	})
-
 	const login=(e)=>{
 		e.preventDefault();
 		let userMail=myform.email.value;
