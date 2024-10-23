@@ -7,6 +7,7 @@ import Login from './Login';
 import Dashboard from './Dashboard';
 import Protection from './Protection';
 import Error from './Error';
+import Footer from './Footer';
 import conText from '../conText';
 
 function RouteRule() {
@@ -22,7 +23,8 @@ function RouteRule() {
 			<Route path='/register' element={<Register/>}></Route>
 			<Route path='/login' element={<Login/>}></Route>
 			<Route path='/dashboard/:usermail' element={<Protection log={value.log}><Dashboard/></Protection>}></Route>
-		</Routes>	
+		</Routes>
+		<Footer/>	
 		</BrowserRouter>
 		
 	)

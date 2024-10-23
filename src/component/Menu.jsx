@@ -5,30 +5,40 @@ import { toast } from 'react-toastify';
 
 function Menu() {
 	const {value}=useContext(conText);
-	const logout=()=>{
-		value.setLog(false);
-		toast.warn('You are logged out')
-	}
 	return (
-		<div id='menu'>
-		<img src="logo.png" alt=""/>
-			<ul>
+<div className="flex justify-between items-center mx-4 my-6">
+	<img src="logo.png" alt="" className='w-[5rem]'/>
+	<div>
+		<ul className="menu menu-horizontal bg-base-200 rounded">
 			{
-				value.log?
-				<li><button onClick={logout}>LOGOUT<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-box-arrow-right" viewBox="0 0 16 16">
-  				<path fillRule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-  				<path fillRule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-				</svg></button></li>
-				:
-				<>
-				<li><NavLink to='' style={({isActive})=>({borderBottom:isActive?'2px solid #feb204':null})}>HOME</NavLink></li>
-				<li><NavLink to='/register' style={({isActive})=>({borderBottom:isActive?'2px solid #feb204':null})}>REGISTER</NavLink></li>
-				<li><NavLink to='/login' style={({isActive})=>({borderBottom:isActive?'2px solid #feb204':null})}>LOGIN</NavLink></li>
-				</>
-			}	
+			value.log?
+			null
+			:
+			<>
+			<NavLink to='/'><li>
+				<div className="tooltip text-xl px-5 py-0" data-tip="Home">
+					<i className="bi bi-house"></i>
+				</div>
+			</li></NavLink>
+			<NavLink to='/register'>
+				<li>
+					<div className="tooltip text-xl px-5 py-0" data-tip="Register">
+						<i className="bi bi-person-add"></i>
+					</div>
+				</li></NavLink>
+				<NavLink to='/login'>
+					<li>
+						<div className="tooltip text-xl px-5 py-0" data-tip="Login">
+							<i className="bi bi-person-circle"></i>
+						</div>
+					</li></NavLink>
+					</>
+					}
+				</ul>
 				
-			</ul>
+			</div>
 		</div>
+
 	)
 }
 
