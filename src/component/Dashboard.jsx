@@ -57,7 +57,7 @@ function Dashboard() {
 
 	<div className='grid grid-cols-1 md:grid-cols-4'>
 {/* ===================left navigate====================== */}
-	<div className="drawer md:hidden">
+	<div className="drawer md:hidden z-50">
 		<input id="my-drawer" type="checkbox" className="drawer-toggle" />
 		<div className="drawer-content flex justify-end px-5">
 			<label htmlFor="my-drawer" className=" drawer-button text-2xl"><i className="bi bi-list"></i></label>
