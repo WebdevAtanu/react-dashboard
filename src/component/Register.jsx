@@ -1,9 +1,11 @@
 import React,{useState,useEffect} from 'react';
 import { toast } from 'react-toastify';
+import {useNavigate} from 'react-router-dom';
 
 
 function Register() {
 
+	const navigate=useNavigate();
 	const register=(e)=>{
 		e.preventDefault();	
 		let userName=myform.name.value;
@@ -14,6 +16,7 @@ function Register() {
 		myform.email.value='';
 		myform.password.value='';
 		toast('Registration complete, you can login now');
+		navigate('/login');
 	}
 
 	return (
